@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Queue</title>
+</head>
+<body>
+
+<a href="/home">Home</a>
+
+<h2>Edit Queue Entry</h2>
+
+<form method="post" action="/edit/{{ entry['id'] }}">
+    <input type="text" name="customer_name" value="{{ entry['customer_name'] }}" required><br>
+    <input type="text" name="service_type" value="{{ entry['service_type'] }}" required><br>
+    <input type="date" name="queue_date" value="{{ entry['queue_date'] }}" required><br>
+    <input type="time" name="queue_time" value="{{ entry['queue_time'] }}" required><br>
+    <button>Update</button>
+</form>
+
+</body>
+</html>

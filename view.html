@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Queue</title>
+</head>
+<body>
+
+<a href="/home">Home</a>
+
+<h2>Queue List</h2>
+
+<form method="get">
+    <input type="text" name="search" placeholder="Search by customer name">
+    <button>Search</button>
+</form>
+
+<img src="/static/2.jpg" width="300">
+
+<table border="1">
+    <tr>
+        <th>No</th><th>Name</th><th>Service</th>
+        <th>Date</th><th>Time</th><th>Edit</th><th>Delete</th>
+    </tr>
+
+    {% for a in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ a['customer_name'] }}</td>
+        <td>{{ a['service_type'] }}</td>
+        <td>{{ a['queue_date'] }}</td>
+        <td>{{ a['queue_time'] }}</td>
+        <td><a href="/edit/{{ a['id'] }}">Edit</a></td>
+        <td><a href="/delete/{{ a['id'] }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
